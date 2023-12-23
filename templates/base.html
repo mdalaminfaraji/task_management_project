@@ -16,7 +16,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button
@@ -36,18 +36,18 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="{% url 'add_author' %}"
-                >Home</a
+                href="{% url 'add_category' %}"
+                >Add Category</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'add_author' %}">Add Author</a>
+              <a class="nav-link" href="{% url 'add_task' %}">Add Task</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'add_author' %}">Add Category</a>
+              <a class="nav-link" href="{% url 'add_task' %}">Add Category</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'add_author' %}">Add Post</a>
+              <a class="nav-link" href="{% url 'add_task' %}">Add Post</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
