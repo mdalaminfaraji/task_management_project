@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %}
+<h2 class="text-center py-4">Show Tasks</h2>
+
+<div class="container text-center">
+  <div class="row justify-content-md-center gap-3">
+    {% for task in tasks %}
+    <div class="card col col-md-3 col-sm-6 shadow">
+      <div class="card-body">
+        <h5 class="card-title">{{ task.taskTitle }}</h5>
+        <p class="card-text">{{ task.taskDescription }}</p>
+        <p class="card-text">Category: {{ task.categories.all|join:", " }}</p>
+        {% if not task.is_completed %}
+        <a href="{% url 'edit_task' task.id %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'delete_task' task.id %}" class="btn btn-danger"
+          >Delete</a
+        >
+        {% else %}
+        <p class="card-text btn btn-success">Completed</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
